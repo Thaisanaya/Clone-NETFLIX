@@ -1,0 +1,117 @@
+
+:root{/*raiz do documento, vou criar uma variavel*/
+    --vermelho:#E50914;
+    --preta:#141414;
+}
+
+/*ponto 0 da formatação, reset de css*/  
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;/*para que os elementos dentro desta caixa, nao empurrem e aumentem a mesma. o limite de td aqui é a borda da caixa*/
+}
+
+/*Elementos Base*/
+
+body{
+    background:var(--preta);
+    font-family: arial,sans-serif;
+    color:white;
+}
+
+header .container {
+    display:flex; /*tem a tendencia de jogar tudo para linha*/
+    flex-direction: row;/*a configuração acima já chama isto, porem estamos incluindo para caráter semântico*/
+    align-items: center;
+    justify-content: space-between;/*cria espaço entre os elementos*/
+}
+
+header .logo{
+    margin-left: 5px;
+    color:var(--vermelho);
+    font-family: 'Arial Black',times,serif;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none;/*remove o sublinhado dos links*/
+    color:#AAA;
+    margin-right: 10px;/*da espaçamento entre os links*/
+
+}
+
+header nav a:hover{/*esse hover pega o evento de toda vez que o mouse estiver em cima do link*/
+    color:#fff;
+
+}
+
+/*Filme Principal*/
+
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('/img/capa-house.jpg');/*linear gradiente da um gradiente na imagem, tenho que colocar 2 rgbs e o .50 é referente a transparencia*/
+    
+    height: 400px;
+    background-size: cover;/*especificar o tamanho da imagem*/
+
+    display:flex;
+    flex-direction: column;/*justify content e align-items segue a direção do flex direction. Neste caso, sera na direção das colunas*/
+    justify-content: center;
+    align-items: flex-start;/*alinhar os elementos da esquerda para a direita*/
+
+
+
+}
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 90px;
+}
+
+.filme-principal .titulo{
+    margin-top: 15%;/*o ideal é trabalhar com percentual*/
+    font-size:40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    ;
+}
+
+.botao{
+    background-color:rgba(0,0,.50);
+    border:none;
+    color:white;
+
+    padding:15px 30px; /*quando coloco padding e passo somente um valor, ele se refere as quatros posicoes, cima, direita, baixo e esquerda*/
+    margin-right: 15px;
+    font-size:12px;
+
+    cursor:pointer;/*para quando passar o mouse, identificar que é uma parte clicável*/
+    transition: .5s ease all;/*transição entre uma animação e outra*/
+}
+
+
+.botao:hover{
+    background-color:white;
+    color:black;
+}
+
+.botao i{
+    margin-right:8px;
+}
+
+.container{
+    margin-left:20px;
+}
+
+.filme-principal .container{
+    width:70%/*pelo que entendi, ajuda na responsividade*/
+}
+
+.box-filme{/*configurando o tamanho das imagens do carrosel*/
+    height:100%;
+    width:100%;
+    display:block;
+}
+
+.carrosel-filmes{
+    margin-top:5px;
+}
